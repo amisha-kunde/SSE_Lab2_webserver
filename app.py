@@ -14,10 +14,12 @@ def submit():
 def hello_world():
     return render_template("index.html")
 
+
 @app.route("/query", methods=["GET"])
 def process_query_route():
     query = request.args.get("q")
     return process_query(query)
+
 
 def process_query(query):
     if query == "dinosaurs":
