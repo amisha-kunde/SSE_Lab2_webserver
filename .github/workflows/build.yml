@@ -27,7 +27,7 @@ jobs:
       - name: Install Pytest
         run: pip install pytest
       - name: Runs tests
-        run: pytest src/*.py
+        run: pytest *.py
 
 
 
