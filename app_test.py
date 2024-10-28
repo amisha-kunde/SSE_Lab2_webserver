@@ -16,4 +16,4 @@ def test_query_username():
 
 
 def test_addition_query():
-    assert addition_query("What is 71 plus 80") == "151"
+    assert addition_query("What is 71 plus 80") == 151
