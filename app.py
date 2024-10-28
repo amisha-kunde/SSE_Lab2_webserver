@@ -27,7 +27,7 @@ def addition_query(query):
     if match:
         num1 = int(match.group(1))
         num2 = int(match.group(2))
-        return num1 + num2
+        return str(num1 + num2)
     else:
         return "Query not recognized."
 
