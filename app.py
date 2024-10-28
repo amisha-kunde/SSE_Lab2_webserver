@@ -37,6 +37,8 @@ def process_query(query):
         return "ak4924"
     if query == "dinosaurs":
         return "Dinosaurs ruled the Earth 200 million years ago"
+    if "plus" in query:
+        return addition_query(query)
     elif query == "asteroids":
         return "Unknown"
     else:
