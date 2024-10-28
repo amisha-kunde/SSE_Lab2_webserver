@@ -22,9 +22,12 @@ def process_query_route():
 
 
 def process_query(query):
+    if "your username" in query:
+        return "ak4924"
     if query == "dinosaurs":
         return "Dinosaurs ruled the Earth 200 million years ago"
     elif query == "asteroids":
         return "Unknown"
     else:
         return "Unknown"
+
