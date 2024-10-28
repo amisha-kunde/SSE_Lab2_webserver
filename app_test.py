@@ -13,3 +13,7 @@ def test_does_not_know_about_asteroids():
 
 def test_query_username():
     assert process_query("What is your name?") == "ak4924"
+
+
+def test_addition_query():
+    assert addition_query("What is 71 plus 80") == "151"
