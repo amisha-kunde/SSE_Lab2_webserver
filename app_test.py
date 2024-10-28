@@ -1,4 +1,4 @@
-from app import process_query
+from app import process_query, addition_query
 
 
 def test_knows_about_dinosaurs():
