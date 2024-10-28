@@ -30,4 +30,3 @@ def process_query(query):
         return "Unknown"
     else:
         return "Unknown"
-
