@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-import re
+import requests
 
 app = Flask(__name__)
 
@@ -20,6 +20,34 @@ def hello_world():  # route endpoint
 def process_query_route():
     query = request.args.get("q")
     return process_query(query)
+
+
+# github exercise
+
+@app.route("/github")
+def github_username():
+    return render_template("github.html")
+
+@app.route("/github-submit", methods=["POST"])
+def process_github_lookup():
+    input_username = request.form.get("username")
+    
+    response = requests.get(f"https://api.github.com/users/{input_username}/repos")
+    
+    if response.status_code == 200:
+        repos = response.json()
+        
+        repo_data = []
+        for repo in repos:
+            repo_info = {
+                "name": repo["name"],
+                "updated_at": repo["updated_at"], 
+                "url": repo["html_url"] 
+            }
+            repo_data.append(repo_info)
+    else:
+        repo_data = [] 
+    return render_template("githubSubmit.html", username=input_username, repositories=repo_data)
 
 
 def addition_query(query):
@@ -43,3 +71,7 @@ def process_query(query):
         return "Unknown"
     else:
         return "Unknown"
+
+
+# call to GitHub API
+

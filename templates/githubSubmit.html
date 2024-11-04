@@ -1,0 +1,44 @@
+<html>
+<head>
+    <title>{{ username }}'s GitHub Repositories</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello, {{ username }}!</h1>
+    <p>Here is the list of your repositories:</p>
+    
+    <table>
+        <tr>
+            <th>Repository Name</th>
+            <th>Last Updated</th>
+            <th>Link</th>
+        </tr>
+        {% for repo in repositories %}
+            <tr>
+                <td>{{ repo.name }}</td>
+                <td>{{ repo.updated_at }}</td>
+                <td><a href="{{ repo.url }}" target="_blank">View</a></td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">No repositories found.</td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
+
+ 
