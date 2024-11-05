@@ -41,6 +41,7 @@ def process_github_lookup():
                     "updated_at": repo["updated_at"],
                     "url": repo["html_url"],
                     "latest_commit": commit_info,
+                    "watchers": repo["watchers_count"]
                 }
             )
     else:
