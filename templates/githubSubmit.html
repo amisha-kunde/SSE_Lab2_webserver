@@ -1,3 +1,4 @@
+
 <html>
 <head>
     <title>{{ username }}'s GitHub Repositories</title>
@@ -18,27 +19,34 @@
 </head>
 <body>
     <h1>Hello, {{ username }}!</h1>
-    <p>Here is the list of your repositories:</p>
+    <p>Here is the list of your repositories and their latest commit information:</p>
     
     <table>
         <tr>
             <th>Repository Name</th>
             <th>Last Updated</th>
-            <th>Link</th>
+            <th>Latest Commit Hash</th>
+            <th>Commit Author</th>
+            <th>Commit Date</th>
+            <th>Commit Message</th>
         </tr>
         {% for repo in repositories %}
             <tr>
                 <td>{{ repo.name }}</td>
                 <td>{{ repo.updated_at }}</td>
-                <td><a href="{{ repo.url }}" target="_blank">View</a></td>
+                <td>{{ repo.latest_commit.commit_hash }}</td>
+                <td>{{ repo.latest_commit.author }}</td>
+                <td>{{ repo.latest_commit.date }}</td>
+                <td>{{ repo.latest_commit.message }}</td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="3">No repositories found.</td>
+                <td colspan="6">No repositories found.</td>
             </tr>
         {% endfor %}
     </table>
 </body>
 </html>
+
 
  
