@@ -24,21 +24,21 @@
         <tr>
             <th>Repository Name</th>
             <th>Last Updated</th>
-            <th>Watchers</th>
             <th>Latest Commit Hash</th>
             <th>Commit Author</th>
             <th>Commit Date</th>
             <th>Commit Message</th>
+            <th>Watchers</th>
         </tr>
         {% for repo in repositories %}
             <tr>
                 <td>{{ repo.name }}</td>
                 <td>{{ repo.updated_at }}</td>
-                <td>{{ repo.watchers }}</td>
                 <td>{{ repo.latest_commit.commit_hash }}</td>
                 <td>{{ repo.latest_commit.author }}</td>
                 <td>{{ repo.latest_commit.date }}</td>
                 <td>{{ repo.latest_commit.message }}</td>
+                <td>{{ repo.watchers }}</td>
             </tr>
         {% else %}
             <tr>
