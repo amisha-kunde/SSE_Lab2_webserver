@@ -58,24 +58,11 @@ def process_github_lookup():
     )
 
 
-def addition_query(query):
-    match = re.search(r"(\d+)\s+plus\s+(\d+)", query)
-    if match:
-        num1 = int(match.group(1))
-        num2 = int(match.group(2))
-        return num1 + num2
-        return str(num1 + num2)
-    else:
-        return "Query not recognized."
-
-
 def process_query(query):
     if "name" in query:
         return "ak4924"
     if query == "dinosaurs":
         return "Dinosaurs ruled the Earth 200 million years ago"
-    if "plus" in query:
-        return addition_query(query)
     elif query == "asteroids":
         return "Unknown"
     else:
