@@ -22,9 +22,8 @@ def process_github_lookup():
 
         for repo in repos:
             commits_response = requests.get(
-                "https://api.github.com/repos/" + input_username + "/" + repo["name"] + "/commits"
+                f"https://api.github.com/repos/{input_username}/{repo['name']}/commits"
             )
-
 
             if commits_response.status_code == 200:
                 latest_commit = commits_response.json()[0]
