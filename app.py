@@ -22,7 +22,8 @@ def process_github_lookup():
 
         for repo in repos:
             commits_response = requests.get(
-                f"https://api.github.com/repos/{input_username}/{repo['name']}/commits"
+                f"https://api.github.com/repos/{input_username}/"
+                f"{repo['name']}/commits"
             )
 
             if commits_response.status_code == 200:
